@@ -1,0 +1,7 @@
+/build/
+/dist/
+/node_modules/
+*.js
+.editorconfig
+package.json
+vite.config.ts

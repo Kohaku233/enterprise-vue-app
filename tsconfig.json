@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    // 将每个文件作为单独的模块
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    // 忽略所有声明文件（*.d.ts）的类型检查，设置为true就不用怕使用的第三方库不规范了
+    "skipLibCheck": true,
+    /* 设置baseUrl来告诉编译器到哪里去查找模块。 所有非相对模块导入都会被当做相对于 baseUrl
+    注意相对模块的导入不会被设置的baseUrl所影响，因为它们总是相对于导入它们的文件 */
+    "baseUrl": "./",
+    /* 模块名到基于 baseUrl的路径映射的列表，请注意"paths"是相对于"baseUrl"进行解析 */
+    "paths": {
+      "@/*":["src/*"],
+    }
+  },
+  // 指定需要编译的文件范围，相应的exclude配置不需要编译的文件范围
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules","dist"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
