@@ -7,12 +7,17 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue,.ts src",
-    "lint:fix": "npx eslint ./src/**/*.vue --fix",
-    "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
+    "lint:fix": "npx eslint ./src/**/*.vue --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,vue}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "animate.css": "^4.1.1",
